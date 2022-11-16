@@ -66,7 +66,7 @@ class _Header extends State<Header> {
                 width: MediaQuery.of(context).size.width / 4,
                 child: Column(children: [
                   ClipRRect(
-                      borderRadius: BorderRadius.circular(10), // Image border
+                      borderRadius: BorderRadius.circular(15),
                       child: GestureDetector(
                           onTap: () {},
                           child: Image.network(
