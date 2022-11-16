@@ -1,4 +1,7 @@
+import 'package:doanltdd/screens/Setting.dart';
 import 'package:flutter/material.dart';
+
+import 'Home.dart';
 
 class Mission extends StatefulWidget {
   const Mission({super.key});
@@ -12,6 +15,12 @@ class _MissionState extends State<Mission> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: (AssetImage("assets/background.jpg")),
+                  fit: BoxFit.cover)),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -123,7 +132,10 @@ class _MissionState extends State<Mission> {
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(50))),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Home()));
+                        },
                         child: Icon(
                           Icons.home,
                           color: Colors.black87,
@@ -139,7 +151,12 @@ class _MissionState extends State<Mission> {
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(50))),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Setting()));
+                        },
                         child: Icon(
                           Icons.settings,
                           color: Colors.black87,

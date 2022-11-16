@@ -1,4 +1,6 @@
 import 'package:doanltdd/screens/Header.dart';
+import 'package:doanltdd/screens/Mission.dart';
+import 'package:doanltdd/screens/Setting.dart';
 import 'package:flutter/material.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 
@@ -41,7 +43,12 @@ class _Home extends State<Home> {
                                   backgroundColor:
                                       MaterialStateProperty.all(Colors.white),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Mission()));
+                                },
                                 child: Image(
                                   image: AssetImage("assets/quest.png"),
                                   width: 80,
@@ -318,7 +325,12 @@ class _Home extends State<Home> {
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(50))),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Setting()));
+                        },
                         child: Icon(
                           Icons.settings,
                           color: Colors.black87,

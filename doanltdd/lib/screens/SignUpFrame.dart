@@ -21,14 +21,17 @@ class _SignUpFrame extends State<SignUpFrame> {
                         image: (AssetImage("assets/background.jpg")),
                         fit: BoxFit.cover)),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image(
-                      image: AssetImage("assets/ABC.png"),
-                      fit: BoxFit.cover,
-                    ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                      padding: EdgeInsets.all(20),
+                      margin: EdgeInsets.only(top: 10),
+                      child: Image(
+                        image: AssetImage("assets/ABC.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
                       child: Text(
                         "Đăng kí tài khoản",
                         style: TextStyle(
@@ -179,17 +182,18 @@ class _SignUpFrame extends State<SignUpFrame> {
                                                       30.0)))),
                                   onPressed: () {
                                     setState(() {
-                                      // Navigator.push(
-                                      //context,
-                                      // MaterialPageRoute(
-                                      // builder: (context) => MyHomePage(
-                                      //    title: '',
-                                      // )
-                                      // )
-                                      //);
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => MyHomePage(
+                                                    title: '',
+                                                  )));
                                     });
                                   },
-                                  child: Text("Hoàn tất"),
+                                  child: Text(
+                                    "Hoàn tất",
+                                    style: TextStyle(color: Colors.black87),
+                                  ),
                                 ),
                               )
                             ],

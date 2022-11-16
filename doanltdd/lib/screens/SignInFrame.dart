@@ -78,15 +78,18 @@ class _SignInFrame extends State<SignInFrame> {
                           RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       )),
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.black87)),
+                      backgroundColor: MaterialStateProperty.all(
+                          Colors.green[200]?.withOpacity(0.8))),
                   onPressed: () {
                     setState(() {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Home()));
                     });
                   },
-                  child: Text("Đăng nhập"),
+                  child: Text(
+                    "Đăng nhập",
+                    style: TextStyle(color: Colors.black87),
+                  ),
                 ))
           ]),
           Row(
@@ -95,10 +98,8 @@ class _SignInFrame extends State<SignInFrame> {
               TextButton(
                 onPressed: () {
                   setState(() {
-                    // Navigator.push(
-                    //  context,
-                    // MaterialPageRoute(
-                    // builder: (context) => SignUpFrame()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignUpFrame()));
                   });
 
                   ;
