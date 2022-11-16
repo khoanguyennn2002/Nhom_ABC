@@ -1,3 +1,5 @@
+import 'package:doanltdd/screens/Header.dart';
+import 'package:doanltdd/screens/Home.dart';
 import 'package:doanltdd/screens/SignUpFrame.dart';
 import 'package:flutter/material.dart';
 
@@ -35,10 +37,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        SignInFrame(),
-      ],
-    ));
+        body: SingleChildScrollView(
+            child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: (AssetImage("assets/background.jpg")),
+                        fit: BoxFit.cover)),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    //Header(),
+                    SignUpFrame(),
+                  ],
+                ))));
   }
 }
