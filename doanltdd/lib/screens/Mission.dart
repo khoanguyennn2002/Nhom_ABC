@@ -10,7 +10,9 @@ class Mission extends StatefulWidget {
 class _MissionState extends State<Mission> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return //Scaffold(
+        // body:
+        Container(
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -27,7 +29,7 @@ class _MissionState extends State<Mission> {
           Container(
               margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
               width: MediaQuery.of(context).size.width / 1.5,
-              height: MediaQuery.of(context).size.height / 2,
+              height: MediaQuery.of(context).size.height / 1.5,
               decoration: BoxDecoration(
                   color: Colors.white60,
                   border: Border.all(width: 1, color: Colors.black),
@@ -43,6 +45,11 @@ class _MissionState extends State<Mission> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
                               child: ElevatedButton(
+                                  style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all(Colors
+                                              .green[200]
+                                              ?.withOpacity(0.8))),
                                   onPressed: () {},
                                   child: Text(
                                     "Nhiệm vụ",
@@ -52,6 +59,9 @@ class _MissionState extends State<Mission> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: ElevatedButton(
+                              style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all(
+                                      Colors.green[200]?.withOpacity(0.8))),
                               onPressed: () {},
                               child: Text("Thành Tựu",
                                   style: TextStyle(color: Colors.black87))),
@@ -62,7 +72,7 @@ class _MissionState extends State<Mission> {
                       Container(
                         margin: EdgeInsets.fromLTRB(10, 10, 20, 0),
                         height: 80,
-                        width: 200,
+                        width: 150,
                         decoration: BoxDecoration(
                             color: Colors.white,
                             border:
@@ -74,6 +84,7 @@ class _MissionState extends State<Mission> {
                   ])),
         ],
       ),
+      //)
     );
   }
 }

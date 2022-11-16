@@ -169,8 +169,9 @@ class _SignUpFrame extends State<SignUpFrame> {
                                 child: ElevatedButton(
                                   style: ButtonStyle(
                                       backgroundColor:
-                                          MaterialStatePropertyAll<Color>(
-                                              Colors.black.withOpacity(0.5)),
+                                          MaterialStateProperty.all(Colors
+                                              .green[200]
+                                              ?.withOpacity(0.8)),
                                       shape: MaterialStatePropertyAll(
                                           RoundedRectangleBorder(
                                               borderRadius:

@@ -59,6 +59,7 @@ class _SignInFrame extends State<SignInFrame> {
           Padding(
             padding: EdgeInsets.fromLTRB(15, 0, 15, 10),
             child: TextField(
+              obscureText: true,
               decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(width: 1, color: Colors.black),
@@ -78,7 +79,7 @@ class _SignInFrame extends State<SignInFrame> {
                         borderRadius: BorderRadius.circular(20.0),
                       )),
                       backgroundColor:
-                          MaterialStateProperty.all(Colors.black54)),
+                          MaterialStateProperty.all(Colors.black87)),
                   onPressed: () {
                     setState(() {
                       Navigator.push(context,
