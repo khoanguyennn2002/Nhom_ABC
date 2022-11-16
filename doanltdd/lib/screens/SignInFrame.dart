@@ -1,3 +1,4 @@
+import 'package:doanltdd/screens/Home.dart';
 import 'package:doanltdd/screens/SignUpFrame.dart';
 import 'package:flutter/material.dart';
 
@@ -79,7 +80,10 @@ class _SignInFrame extends State<SignInFrame> {
                       backgroundColor:
                           MaterialStateProperty.all(Colors.black54)),
                   onPressed: () {
-                    setState(() {});
+                    setState(() {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Home()));
+                    });
                   },
                   child: Text("Đăng nhập"),
                 ))
