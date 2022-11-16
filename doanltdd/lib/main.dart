@@ -1,5 +1,6 @@
 import 'package:doanltdd/screens/Header.dart';
 import 'package:doanltdd/screens/Home.dart';
+import 'package:doanltdd/screens/Setting.dart';
 import 'package:doanltdd/screens/SignUpFrame.dart';
 import 'package:flutter/material.dart';
 

@@ -124,7 +124,7 @@ class _Home extends State<Home> {
                                           "<<Tiếp tục hoàn thiện kiến thức nào!>>",
                                           style: TextStyle(
                                               fontSize: 15,
-                                              color: Colors.white))
+                                              color: Colors.black87))
                                     ]),
                               )),
                           Row(
@@ -194,7 +194,7 @@ class _Home extends State<Home> {
                                       Text("<<Khẳng định vị trí bản thân!>>",
                                           style: TextStyle(
                                               fontSize: 15,
-                                              color: Colors.white))
+                                              color: Colors.black87))
                                     ]),
                               )),
                           Row(
@@ -242,7 +242,7 @@ class _Home extends State<Home> {
                                           Text("<<Tìm hiểu thêm về trò chơi!>>",
                                               style: TextStyle(
                                                   fontSize: 15,
-                                                  color: Colors.white))
+                                                  color: Colors.black87))
                                         ],
                                       ),
                                     ]),

@@ -31,7 +31,7 @@ class _SettingState extends State<Setting> {
           ),
           Container(
               //margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
-              width: MediaQuery.of(context).size.width / 2,
+              width: MediaQuery.of(context).size.width / 1.5,
               decoration: BoxDecoration(
                   color: Colors.white60,
                   border: Border.all(width: 1, color: Colors.black),
@@ -43,13 +43,11 @@ class _SettingState extends State<Setting> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(Icons.volume_up),
-                        Slider(
+                        CupertinoSlider(
                           value: value,
                           min: 0,
                           max: 100,
-                          divisions: 5,
                           activeColor: Colors.green,
-                          inactiveColor: Colors.orange,
                           onChanged: (newValue) {
                             setState(() {
                               value = newValue;
@@ -83,6 +81,8 @@ class _SettingState extends State<Setting> {
                           width: 150,
                           child: ElevatedButton(
                             style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                    Colors.green[200]?.withOpacity(0.8)),
                                 shape: MaterialStateProperty.all<
                                         RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
@@ -90,7 +90,7 @@ class _SettingState extends State<Setting> {
                                             BorderRadius.circular(50)))),
                             onPressed: () {},
                             child: Text("Báo cáo",
-                                style: TextStyle(color: Colors.black)),
+                                style: TextStyle(color: Colors.black87)),
                           ),
                         )),
                     Container(
@@ -101,6 +101,8 @@ class _SettingState extends State<Setting> {
                           width: 150,
                           child: ElevatedButton(
                             style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                    Colors.green[200]?.withOpacity(0.8)),
                                 shape: MaterialStateProperty.all<
                                         RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
@@ -121,7 +123,8 @@ class _SettingState extends State<Setting> {
                                 child: Text(
                                   "Đăng xuất",
                                   style: TextStyle(
-                                      decoration: TextDecoration.underline),
+                                      decoration: TextDecoration.underline,
+                                      color: Colors.black87),
                                 ))
                           ],
                         ))

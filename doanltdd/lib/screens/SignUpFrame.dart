@@ -1,3 +1,4 @@
+import 'package:doanltdd/main.dart';
 import 'package:flutter/material.dart';
 
 class SignUpFrame extends StatefulWidget {
@@ -176,7 +177,16 @@ class _SignUpFrame extends State<SignUpFrame> {
                                                   BorderRadius.circular(
                                                       30.0)))),
                                   onPressed: () {
-                                    setState(() {});
+                                    setState(() {
+                                      // Navigator.push(
+                                      //context,
+                                      // MaterialPageRoute(
+                                      // builder: (context) => MyHomePage(
+                                      //    title: '',
+                                      // )
+                                      // )
+                                      //);
+                                    });
                                   },
                                   child: Text("Hoàn tất"),
                                 ),

@@ -14,7 +14,7 @@ class _Header extends State<Header> {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 9,
       decoration: BoxDecoration(
-          color: Colors.green[500]?.withOpacity(0.5),
+          color: Colors.green[200]?.withOpacity(0.8),
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20))),
@@ -44,7 +44,7 @@ class _Header extends State<Header> {
                               Text("50/100"),
                               TextButton.icon(
                                   onPressed: () {},
-                                  icon: Icon(Icons.add, color: Colors.black),
+                                  icon: Icon(Icons.add, color: Colors.black87),
                                   label: Text(""))
                             ]),
                       ),
@@ -97,10 +97,7 @@ class _Header extends State<Header> {
                           Text("2400"),
                           TextButton.icon(
                               onPressed: () {},
-                              icon: Icon(
-                                Icons.add,
-                                color: Colors.black,
-                              ),
+                              icon: Icon(Icons.add, color: Colors.black87),
                               label: Text(""))
                         ]),
                   ),
