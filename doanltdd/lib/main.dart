@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     //Header(),
-                    SignUpFrame(),
+                    SignInFrame(),
                   ],
                 ))));
   }
