@@ -1,6 +1,8 @@
 import 'package:doanltdd/screens/SignUpFrame.dart';
 import 'package:flutter/material.dart';
 
+import 'screens/SignInFrame.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -34,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
-      children: [SignUpFrame()],
+      children: [SignInFrame()],
     ));
   }
 }
