@@ -14,7 +14,7 @@ class _Header extends State<Header> {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 9,
       decoration: BoxDecoration(
-          color: Colors.green[200]?.withOpacity(0.8),
+          color: Colors.green,
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20))),
@@ -31,7 +31,7 @@ class _Header extends State<Header> {
                     clipBehavior: Clip.none,
                     children: [
                       Container(
-                        width: 130,
+                        width: 100,
                         padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                         height: (MediaQuery.of(context).size.height / 9) / 2,
                         margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
@@ -39,13 +39,9 @@ class _Header extends State<Header> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20)),
                         child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text("50/100"),
-                              TextButton.icon(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.add, color: Colors.black87),
-                                  label: Text(""))
                             ]),
                       ),
                       Positioned(
@@ -69,8 +65,8 @@ class _Header extends State<Header> {
                       borderRadius: BorderRadius.circular(15),
                       child: GestureDetector(
                           onTap: () {},
-                          child: Image.network(
-                            'https://images.unsplash.com/photo-1668164077013-0e7dddb0c110?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+                          child: Image.asset(
+                            'assets/avata.jpg',
                             height:
                                 (MediaQuery.of(context).size.height / 7) / 2,
                             fit: BoxFit.cover,
@@ -85,20 +81,16 @@ class _Header extends State<Header> {
                 clipBehavior: Clip.none,
                 children: [
                   Container(
-                    width: 130,
+                    width: 100,
                     height: (MediaQuery.of(context).size.height / 9) / 2,
                     margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20)),
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text("2400"),
-                          TextButton.icon(
-                              onPressed: () {},
-                              icon: Icon(Icons.add, color: Colors.black87),
-                              label: Text(""))
                         ]),
                   ),
                   Positioned(

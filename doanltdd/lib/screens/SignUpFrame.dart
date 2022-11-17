@@ -95,7 +95,6 @@ class _SignUpFrame extends State<SignUpFrame> {
                                 ),
                                 child: Text(
                                   "Mật khẩu:",
-                                  style: TextStyle(fontFamily: "Aptima"),
                                 ),
                               )
                             ],

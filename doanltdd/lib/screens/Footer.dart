@@ -1,10 +1,7 @@
 import 'package:doanltdd/main.dart';
 import 'package:doanltdd/screens/Home.dart';
 import 'package:doanltdd/screens/Setting.dart';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class Footer extends StatefulWidget {
   const Footer({super.key});
@@ -13,56 +10,48 @@ class Footer extends StatefulWidget {
   State<Footer> createState() => _Footer();
 }
 
-class _Footer extends State<Footer> {
+class _Footer extends State<Footer> with TickerProviderStateMixin {
+  late TabController _tabController;
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(initialIndex: 0, length: 2, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
-        ),
-        child: BottomAppBar(
-          color: Colors.green[200]?.withOpacity(0.8),
-          child: Container(
-              height: MediaQuery.of(context).size.height / 9,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  FloatingActionButton(
-                    backgroundColor: Colors.white,
-                    onPressed: () {},
-                    child: Icon(
-                      Icons.store,
-                      color: Colors.black87,
-                      size: 50,
-                    ),
-                  ),
-                  FloatingActionButton(
-                    backgroundColor: Colors.white,
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Home()));
-                    },
-                    child: Icon(
+    return Scaffold(
+        bottomNavigationBar: BottomAppBar(
+            child: Container(
+                decoration: BoxDecoration(color: Colors.green),
+                height: MediaQuery.of(context).size.height / 10,
+                child: TabBar(
+                  controller: _tabController,
+                  tabs: [
+                    /*Icon(
+                          Icons.store,
+                          size: 50,
+                        ),*/
+                    Icon(
                       Icons.home,
-                      color: Colors.black87,
                       size: 50,
+                      color: Colors.black87,
                     ),
-                  ),
-                  FloatingActionButton(
-                    backgroundColor: Colors.white,
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Setting()));
-                    },
-                    child: Icon(
+                    Icon(
                       Icons.settings,
-                      color: Colors.black87,
                       size: 50,
-                    ),
-                  )
-                ],
-              )),
+                      color: Colors.black87,
+                    )
+                  ],
+                ))),
+        body: TabBarView(
+          controller: _tabController,
+          children: [
+            Center(
+              child: Home(),
+            ),
+            Setting()
+          ],
         ));
   }
 }

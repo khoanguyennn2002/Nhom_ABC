@@ -1,3 +1,4 @@
+import 'package:doanltdd/screens/Footer.dart';
 import 'package:doanltdd/screens/Home.dart';
 import 'package:doanltdd/screens/SignUpFrame.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +84,7 @@ class _SignInFrame extends State<SignInFrame> {
                   onPressed: () {
                     setState(() {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Home()));
+                          MaterialPageRoute(builder: (context) => Footer()));
                     });
                   },
                   child: Text(
