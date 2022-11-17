@@ -1,6 +1,7 @@
 import 'package:doanltdd/screens/Setting.dart';
 import 'package:flutter/material.dart';
 
+import 'Footer.dart';
 import 'Home.dart';
 
 class Mission extends StatefulWidget {
@@ -51,7 +52,7 @@ class _MissionState extends State<Mission> {
                             Padding(
                                 padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                                 child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(15),
                                   child: ElevatedButton(
                                       style: ButtonStyle(
                                           backgroundColor:
@@ -65,7 +66,7 @@ class _MissionState extends State<Mission> {
                                       )),
                                 )),
                             ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(15),
                               child: ElevatedButton(
                                   style: ButtonStyle(
                                       backgroundColor:
@@ -95,76 +96,6 @@ class _MissionState extends State<Mission> {
             ],
           ),
         ),
-        bottomNavigationBar: ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20),
-            ),
-            child: BottomAppBar(
-              color: Colors.green[200]?.withOpacity(0.8),
-              child: Container(
-                  height: MediaQuery.of(context).size.height / 9,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(50))),
-                        ),
-                        onPressed: () {},
-                        child: Icon(
-                          Icons.store,
-                          color: Colors.black87,
-                          size: 50,
-                        ),
-                      ),
-                      ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(50))),
-                        ),
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Home()));
-                        },
-                        child: Icon(
-                          Icons.home,
-                          color: Colors.black87,
-                          size: 50,
-                        ),
-                      ),
-                      ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(50))),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Setting()));
-                        },
-                        child: Icon(
-                          Icons.settings,
-                          color: Colors.black87,
-                          size: 50,
-                        ),
-                      )
-                    ],
-                  )),
-            )));
+        bottomNavigationBar: Footer());
   }
 }
