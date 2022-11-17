@@ -28,13 +28,8 @@ class _Footer extends State<Footer> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(50))),
-                    ),
+                  FloatingActionButton(
+                    backgroundColor: Colors.white,
                     onPressed: () {},
                     child: Icon(
                       Icons.store,
@@ -42,13 +37,8 @@ class _Footer extends State<Footer> {
                       size: 50,
                     ),
                   ),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(50))),
-                    ),
+                  FloatingActionButton(
+                    backgroundColor: Colors.white,
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Home()));
@@ -59,13 +49,8 @@ class _Footer extends State<Footer> {
                       size: 50,
                     ),
                   ),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(50))),
-                    ),
+                  FloatingActionButton(
+                    backgroundColor: Colors.white,
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Setting()));

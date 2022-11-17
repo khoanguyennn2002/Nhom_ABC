@@ -85,7 +85,7 @@ class _SettingState extends State<Setting> {
                           children: [],
                         ),
                         Container(
-                            margin: EdgeInsets.only(bottom: 10),
+                            //margin: EdgeInsets.only(bottom: 8),
                             alignment: AlignmentDirectional.center,
                             child: SizedBox(
                               width: 150,
@@ -99,13 +99,13 @@ class _SettingState extends State<Setting> {
                                             borderRadius:
                                                 BorderRadius.circular(50)))),
                                 onPressed: () {},
-                                child: Text("Báo cáo",
+                                child: Text("Phản hồi",
                                     style: TextStyle(color: Colors.black87)),
                               ),
                             )),
                         Container(
                             padding: EdgeInsets.all(8),
-                            margin: EdgeInsets.only(bottom: 10),
+                            //  margin: EdgeInsets.only(bottom: 8),
                             alignment: AlignmentDirectional.center,
                             child: SizedBox(
                               width: 150,
@@ -119,7 +119,7 @@ class _SettingState extends State<Setting> {
                                             borderRadius:
                                                 BorderRadius.circular(50)))),
                                 onPressed: () {},
-                                child: Text("Cài đặt tài khoản",
+                                child: Text("Đánh giá",
                                     style: TextStyle(color: Colors.black)),
                               ),
                             )),
