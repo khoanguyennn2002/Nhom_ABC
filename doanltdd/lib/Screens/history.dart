@@ -1,5 +1,7 @@
+import 'package:doanltdd/Screens/Header.dart';
+import 'package:doanltdd/Screens/rankmode.dart';
 import 'package:flutter/material.dart';
-import 'package:sticky_headers/sticky_headers/widget.dart';
+import 'package:sticky_headers/sticky_headers.dart';
 
 class HistoryFrame extends StatefulWidget {
   HistoryFrame({super.key});

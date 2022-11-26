@@ -1,3 +1,7 @@
+import 'package:doanltdd/Screens/Rating.dart';
+import 'package:doanltdd/Screens/Report.dart';
+import 'package:doanltdd/Screens/SignInFrame.dart';
+import 'package:doanltdd/main.dart';
 import 'package:doanltdd/screens/Footer.dart';
 import 'package:doanltdd/screens/Header.dart';
 import 'package:flutter/cupertino.dart';
@@ -101,7 +105,12 @@ class _SettingState extends State<Setting> {
                                       RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(50)))),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Report()));
+                              },
                               child: Text("Phản hồi",
                                   style: TextStyle(color: Colors.black87)),
                             ),
@@ -121,7 +130,12 @@ class _SettingState extends State<Setting> {
                                       RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(50)))),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Rating()));
+                              },
                               child: Text("Đánh giá",
                                   style: TextStyle(color: Colors.black)),
                             ),
@@ -132,7 +146,36 @@ class _SettingState extends State<Setting> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return AlertDialog(
+                                            title: Text("Đăng xuất"),
+                                            content: Text(
+                                                "Bạn có chắc là muốn thoát không ?"),
+                                            actions: [
+                                              TextButton(
+                                                  onPressed: () {
+                                                    Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                            builder:
+                                                                (context) =>
+                                                                    MyHomePage(
+                                                                      title: "",
+                                                                    )));
+                                                  },
+                                                  child: Text("xác nhận")),
+                                              TextButton(
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                  child: Text("Hủy")),
+                                            ],
+                                          );
+                                        });
+                                  },
                                   child: Text(
                                     "Đăng xuất",
                                     style: TextStyle(

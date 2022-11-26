@@ -1,3 +1,4 @@
+import 'package:doanltdd/Screens/Shop.dart';
 import 'package:doanltdd/main.dart';
 import 'package:doanltdd/screens/Home.dart';
 import 'package:doanltdd/screens/Setting.dart';
@@ -15,7 +16,7 @@ class _Footer extends State<Footer> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(initialIndex: 0, length: 2, vsync: this);
+    _tabController = TabController(initialIndex: 1, length: 3, vsync: this);
   }
 
   @override
@@ -28,10 +29,11 @@ class _Footer extends State<Footer> with TickerProviderStateMixin {
                 child: TabBar(
                   controller: _tabController,
                   tabs: [
-                    /*Icon(
-                          Icons.store,
-                          size: 50,
-                        ),*/
+                    Icon(
+                      Icons.store,
+                      size: 50,
+                      color: Colors.black87,
+                    ),
                     Icon(
                       Icons.home,
                       size: 50,
@@ -47,10 +49,11 @@ class _Footer extends State<Footer> with TickerProviderStateMixin {
         body: TabBarView(
           controller: _tabController,
           children: [
+            Center(child: Shop()),
             Center(
               child: Home(),
             ),
-            Setting()
+            Center(child: Setting())
           ],
         ));
   }

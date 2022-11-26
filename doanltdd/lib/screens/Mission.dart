@@ -29,26 +29,20 @@ class _MissionState extends State<Mission> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Header(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
-                  padding: EdgeInsets.only(top: 20),
-                  child: TextButton(
-                      onPressed: () {
-                        setState(() {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Footer()));
-                        });
-                      },
-                      child: Text(
-                        "X",
-                        style: TextStyle(color: Colors.black87, fontSize: 30),
-                      )))
-            ],
-          ),
+          Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+            Container(
+                margin: EdgeInsets.all(5),
+                child: TextButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Footer()));
+                    },
+                    child: Icon(
+                      Icons.close,
+                      color: Colors.black87,
+                      size: 35,
+                    )))
+          ]),
           Container(
             margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
             child: Text("Nhiệm vụ",
