@@ -1,3 +1,9 @@
+import 'package:doanltdd/Screens/Footer.dart';
+import 'package:doanltdd/Screens/Header.dart';
+import 'package:doanltdd/Screens/Home.dart';
+import 'package:doanltdd/Screens/history.dart';
+import 'package:doanltdd/Screens/rankplay.dart';
+import 'package:doanltdd/Screens/top100.dart';
 import 'package:flutter/material.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 
@@ -33,7 +39,7 @@ class _RankModeFrame extends State<RankModeFrame> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Home()));
+                                      builder: (context) => Footer()));
                             },
                             child: Icon(
                               Icons.close,
@@ -69,7 +75,7 @@ class _RankModeFrame extends State<RankModeFrame> {
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
-                                    fontFamily: 'Aptima',
+                                   // fontFamily: 'Aptima',
                                     color: Colors.black87),
                               ),
                             ),
@@ -104,7 +110,7 @@ class _RankModeFrame extends State<RankModeFrame> {
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20,
-                                      fontFamily: 'Aptima',
+                                     // fontFamily: 'Aptima',
                                       color: Colors.black87),
                                 ),
                               ),
@@ -129,7 +135,7 @@ class _RankModeFrame extends State<RankModeFrame> {
                                         'Lịch sử',
                                         style: TextStyle(
                                             fontSize: 15,
-                                            fontFamily: 'Aptima',
+                                            //fontFamily: 'Aptima',
                                             color: Colors.black87),
                                       )))
                             ]),
@@ -149,7 +155,7 @@ class _RankModeFrame extends State<RankModeFrame> {
                                   'Bạc',
                                   style: TextStyle(
                                       fontSize: 15,
-                                      fontFamily: 'Aptima',
+                                     // fontFamily: 'Aptima',
                                       color: Colors.black87),
                                 ),
                               ),
@@ -160,7 +166,7 @@ class _RankModeFrame extends State<RankModeFrame> {
                                     '68',
                                     style: TextStyle(
                                         fontSize: 15,
-                                        fontFamily: 'Aptima',
+                                       // fontFamily: 'Aptima',
                                         color: Colors.black87),
                                   ),
                                 ),
@@ -170,7 +176,7 @@ class _RankModeFrame extends State<RankModeFrame> {
                                     'điểm',
                                     style: TextStyle(
                                         fontSize: 15,
-                                        fontFamily: 'Aptima',
+                                       // fontFamily: 'Aptima',
                                         color: Colors.black87),
                                   ),
                                 ),
@@ -185,7 +191,7 @@ class _RankModeFrame extends State<RankModeFrame> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
-                                fontFamily: 'Aptima',
+                              //  fontFamily: 'Aptima',
                                 color: Colors.black87),
                           ),
                         ),
@@ -205,7 +211,7 @@ class _RankModeFrame extends State<RankModeFrame> {
                                   '188',
                                   style: TextStyle(
                                       fontSize: 15,
-                                      fontFamily: 'Aptima',
+                                     // fontFamily: 'Aptima',
                                       color: Colors.black87),
                                 ),
                               ),
@@ -219,7 +225,7 @@ class _RankModeFrame extends State<RankModeFrame> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
-                                fontFamily: 'Aptima',
+                              //  fontFamily: 'Aptima',
                                 color: Colors.black87),
                           ),
                         ),
@@ -239,7 +245,7 @@ class _RankModeFrame extends State<RankModeFrame> {
                                   '21,3',
                                   style: TextStyle(
                                       fontSize: 15,
-                                      fontFamily: 'Aptima',
+                                   //   fontFamily: 'Aptima',
                                       color: Colors.black87),
                                 ),
                               ),
@@ -249,7 +255,7 @@ class _RankModeFrame extends State<RankModeFrame> {
                                   '%',
                                   style: TextStyle(
                                       fontSize: 15,
-                                      fontFamily: 'Aptima',
+                                  //    fontFamily: 'Aptima',
                                       color: Colors.black87),
                                 ),
                               ),
@@ -281,7 +287,7 @@ class _RankModeFrame extends State<RankModeFrame> {
                                           'Tìm trận',
                                           style: TextStyle(
                                               fontSize: 15,
-                                              fontFamily: 'Aptima',
+                                              //fontFamily: 'Aptima',
                                               color: Colors.black87),
                                         ))),
                               )

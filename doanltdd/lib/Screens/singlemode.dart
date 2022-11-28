@@ -1,3 +1,7 @@
+import 'package:doanltdd/Screens/Footer.dart';
+import 'package:doanltdd/Screens/Header.dart';
+import 'package:doanltdd/Screens/Home.dart';
+import 'package:doanltdd/Screens/singleplay.dart';
 import 'package:flutter/material.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
 
@@ -28,8 +32,10 @@ class _SingleModeFrame extends State<SingleModeFrame> {
                     margin: EdgeInsets.all(5),
                     child: TextButton(
                         onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Home()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Footer()));
                         },
                         child: Icon(
                           Icons.close,
@@ -38,6 +44,7 @@ class _SingleModeFrame extends State<SingleModeFrame> {
                         )))
               ]),
               Container(
+                height: 90,
                 margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
                 padding: EdgeInsets.all(2),
                 decoration: BoxDecoration(
@@ -56,7 +63,7 @@ class _SingleModeFrame extends State<SingleModeFrame> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
-                                fontFamily: 'Aptima',
+                                // fontFamily: 'Aptima',
                                 color: Colors.black87),
                           ),
                         ),
@@ -67,7 +74,7 @@ class _SingleModeFrame extends State<SingleModeFrame> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
-                                fontFamily: 'Aptima',
+                                // fontFamily: 'Aptima',
                                 color: Colors.black87),
                           ),
                         )
@@ -75,8 +82,8 @@ class _SingleModeFrame extends State<SingleModeFrame> {
                     ),
                     Container(
                         padding: EdgeInsets.all(2),
-                        width: MediaQuery.of(context).size.width / 3,
-                        height: MediaQuery.of(context).size.width / 3,
+                        width: MediaQuery.of(context).size.width / 4,
+                        height: MediaQuery.of(context).size.width / 4,
                         child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -110,7 +117,7 @@ class _SingleModeFrame extends State<SingleModeFrame> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
                 decoration: BoxDecoration(
                     color: Colors.white60.withOpacity(0.8),
                     borderRadius: BorderRadius.circular(20),
@@ -146,7 +153,7 @@ class _SingleModeFrame extends State<SingleModeFrame> {
                                 child: Text(
                                   'Màn 1',
                                   style: TextStyle(
-                                      fontFamily: 'Aptima',
+                                      //    fontFamily: 'Aptima',
                                       fontSize: 20,
                                       color: Colors.black87),
                                 ),
@@ -180,7 +187,7 @@ class _SingleModeFrame extends State<SingleModeFrame> {
                                 child: Text(
                                   'Màn 2',
                                   style: TextStyle(
-                                      fontFamily: 'Aptima',
+                                      //    fontFamily: 'Aptima',
                                       fontSize: 20,
                                       color: Colors.black87),
                                 ),
@@ -214,7 +221,7 @@ class _SingleModeFrame extends State<SingleModeFrame> {
                                 child: Text(
                                   'Màn 3',
                                   style: TextStyle(
-                                      fontFamily: 'Aptima',
+                                      //     fontFamily: 'Aptima',
                                       fontSize: 20,
                                       color: Colors.black87),
                                 ),
@@ -248,7 +255,7 @@ class _SingleModeFrame extends State<SingleModeFrame> {
                                 child: Text(
                                   'Màn 4',
                                   style: TextStyle(
-                                      fontFamily: 'Aptima',
+                                      //  fontFamily: 'Aptima',
                                       fontSize: 20,
                                       color: Colors.black87),
                                 ),
@@ -282,7 +289,7 @@ class _SingleModeFrame extends State<SingleModeFrame> {
                                 child: Text(
                                   'Màn 5',
                                   style: TextStyle(
-                                      fontFamily: 'Aptima',
+                                      //    fontFamily: 'Aptima',
                                       fontSize: 20,
                                       color: Colors.black87),
                                 ),

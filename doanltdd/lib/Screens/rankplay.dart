@@ -1,3 +1,5 @@
+import 'package:doanltdd/Screens/Header.dart';
+import 'package:doanltdd/Screens/rankmode.dart';
 import 'package:flutter/material.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 
@@ -85,7 +87,7 @@ class _RankplayFrame extends State<RankplayFrame> {
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20,
-                                      fontFamily: 'Aptima',
+                                      //  fontFamily: 'Aptima',
                                       color: Colors.black87),
                                 ),
                               ],
@@ -97,7 +99,7 @@ class _RankplayFrame extends State<RankplayFrame> {
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
-                                    fontFamily: 'Aptima',
+                                    //   fontFamily: 'Aptima',
                                     color: Colors.black87),
                               ),
                             ),
@@ -113,9 +115,10 @@ class _RankplayFrame extends State<RankplayFrame> {
                                 Text(
                                   '<<Điểm>>',
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      fontFamily: 'Aptima'),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                    // fontFamily: 'Aptima'
+                                  ),
                                 ),
                               ],
                             ),
@@ -144,7 +147,7 @@ class _RankplayFrame extends State<RankplayFrame> {
                                     child: Text(
                                       '<<Câu hỏi ở đây!!Câu hỏi ở đây!!Câu hỏi ở đây!!Câu hỏi ở đây!!Câu hỏi ở đây!!Câu hỏi ở đây>>',
                                       style: TextStyle(
-                                          fontFamily: 'Aptima',
+                                          //   fontFamily: 'Aptima',
                                           fontSize: 15,
                                           color: Colors.black87),
                                     ),
@@ -168,7 +171,7 @@ class _RankplayFrame extends State<RankplayFrame> {
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20,
-                                          fontFamily: 'Aptima',
+                                          //     fontFamily: 'Aptima',
                                           color: Colors.black87),
                                     ),
                                   )),
@@ -182,7 +185,7 @@ class _RankplayFrame extends State<RankplayFrame> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
-                                fontFamily: 'Aptima',
+                                // fontFamily: 'Aptima',
                                 color: Colors.black87),
                           ),
                         ),
@@ -210,7 +213,7 @@ class _RankplayFrame extends State<RankplayFrame> {
                                   child: Text(
                                     'A đáp án này sai chắc luôn',
                                     style: TextStyle(
-                                        fontFamily: 'Aptima',
+                                        // fontFamily: 'Aptima',
                                         color: Colors.black87,
                                         fontSize: 15),
                                   )),
@@ -236,7 +239,7 @@ class _RankplayFrame extends State<RankplayFrame> {
                                   child: Text(
                                     'B đáp án này sai chắc luôn',
                                     style: TextStyle(
-                                        fontFamily: 'Aptima',
+                                        // fontFamily: 'Aptima',
                                         color: Colors.black87,
                                         fontSize: 15),
                                   )),
@@ -267,7 +270,7 @@ class _RankplayFrame extends State<RankplayFrame> {
                                   child: Text(
                                     'C đáp án này sai chắc luôn',
                                     style: TextStyle(
-                                        fontFamily: 'Aptima',
+                                        //    fontFamily: 'Aptima',
                                         color: Colors.black87,
                                         fontSize: 15),
                                   )),
@@ -293,7 +296,7 @@ class _RankplayFrame extends State<RankplayFrame> {
                                   child: Text(
                                     'D đáp án này sai chắc luôn',
                                     style: TextStyle(
-                                        fontFamily: 'Aptima',
+                                        //   fontFamily: 'Aptima',
                                         color: Colors.black87,
                                         fontSize: 15),
                                   )),

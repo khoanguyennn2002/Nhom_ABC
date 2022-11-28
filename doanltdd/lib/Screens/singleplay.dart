@@ -1,3 +1,5 @@
+import 'package:doanltdd/Screens/Header.dart';
+import 'package:doanltdd/Screens/singlemode.dart';
 import 'package:flutter/material.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
 
@@ -78,7 +80,7 @@ class _SinglePlayFrame extends State<SinglePlayFrame> {
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
-                                    fontFamily: 'Aptima',
+                                    //   fontFamily: 'Aptima',
                                     color: Colors.black87),
                               ),
                             ),
@@ -89,7 +91,7 @@ class _SinglePlayFrame extends State<SinglePlayFrame> {
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
-                                    fontFamily: 'Aptima',
+                                    //     fontFamily: 'Aptima',
                                     color: Colors.black87),
                               ),
                             )
@@ -107,7 +109,7 @@ class _SinglePlayFrame extends State<SinglePlayFrame> {
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 20,
-                                        fontFamily: 'Aptima',
+                                        //     fontFamily: 'Aptima',
                                         color: Colors.black87),
                                   ),
                                 ),
@@ -118,7 +120,7 @@ class _SinglePlayFrame extends State<SinglePlayFrame> {
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 20,
-                                        fontFamily: 'Aptima',
+                                        //       fontFamily: 'Aptima',
                                         color: Colors.black87),
                                   ),
                                 )
@@ -131,7 +133,7 @@ class _SinglePlayFrame extends State<SinglePlayFrame> {
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
-                                    fontFamily: 'Aptima',
+                                    //     fontFamily: 'Aptima',
                                     color: Colors.black87),
                               ),
                             )
@@ -160,7 +162,7 @@ class _SinglePlayFrame extends State<SinglePlayFrame> {
                                     child: Text(
                                       '<<Câu hỏi ở đây!!Câu hỏi ở đây!!Câu hỏi ở đây!!Câu hỏi ở đây!!Câu hỏi ở đây!!Câu hỏi ở đây>>',
                                       style: TextStyle(
-                                          fontFamily: 'Aptima',
+                                          //        fontFamily: 'Aptima',
                                           fontSize: 15,
                                           color: Colors.black87),
                                     ),
@@ -184,7 +186,7 @@ class _SinglePlayFrame extends State<SinglePlayFrame> {
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20,
-                                          fontFamily: 'Aptima',
+                                          //        fontFamily: 'Aptima',
                                           color: Colors.black87),
                                     ),
                                   )),
@@ -198,7 +200,7 @@ class _SinglePlayFrame extends State<SinglePlayFrame> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
-                                fontFamily: 'Aptima',
+                                //    fontFamily: 'Aptima',
                                 color: Colors.black87),
                           ),
                         ),
@@ -226,7 +228,7 @@ class _SinglePlayFrame extends State<SinglePlayFrame> {
                                   child: Text(
                                     'A đáp án này sai chắc luôn',
                                     style: TextStyle(
-                                        fontFamily: 'Aptima',
+                                        //      fontFamily: 'Aptima',
                                         color: Colors.black87,
                                         fontSize: 15),
                                   )),
@@ -252,7 +254,7 @@ class _SinglePlayFrame extends State<SinglePlayFrame> {
                                   child: Text(
                                     'B đáp án này sai chắc luôn',
                                     style: TextStyle(
-                                        fontFamily: 'Aptima',
+                                        //       fontFamily: 'Aptima',
                                         color: Colors.black87,
                                         fontSize: 15),
                                   )),
@@ -283,7 +285,7 @@ class _SinglePlayFrame extends State<SinglePlayFrame> {
                                   child: Text(
                                     'C đáp án này sai chắc luôn',
                                     style: TextStyle(
-                                        fontFamily: 'Aptima',
+                                        //       fontFamily: 'Aptima',
                                         color: Colors.black87,
                                         fontSize: 15),
                                   )),
@@ -309,7 +311,7 @@ class _SinglePlayFrame extends State<SinglePlayFrame> {
                                   child: Text(
                                     'D đáp án này sai chắc luôn',
                                     style: TextStyle(
-                                        fontFamily: 'Aptima',
+                                        //     fontFamily: 'Aptima',
                                         color: Colors.black87,
                                         fontSize: 15),
                                   )),
