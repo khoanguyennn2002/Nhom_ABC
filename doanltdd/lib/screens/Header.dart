@@ -1,3 +1,4 @@
+import 'package:doanltdd/Screens/Profile.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatefulWidget {
@@ -64,7 +65,12 @@ class _Header extends State<Header> {
                   ClipRRect(
                       borderRadius: BorderRadius.circular(15),
                       child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Profile()));
+                          },
                           child: Image.asset(
                             'assets/avata.jpg',
                             height:

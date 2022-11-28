@@ -1,3 +1,7 @@
+import 'package:doanltdd/Screens/Bag.dart';
+import 'package:doanltdd/Screens/Guilde.dart';
+import 'package:doanltdd/Screens/rankmode.dart';
+import 'package:doanltdd/Screens/singlemode.dart';
 import 'package:doanltdd/screens/Footer.dart';
 import 'package:doanltdd/screens/Header.dart';
 import 'package:doanltdd/screens/Mission.dart';
@@ -68,7 +72,12 @@ class _Home extends State<Home> {
                               backgroundColor:
                                   MaterialStateProperty.all(Colors.white),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Bag()));
+                            },
                             child: Image(
                               image: AssetImage("assets/school-bag.png"),
                               width: 80,
@@ -93,7 +102,12 @@ class _Home extends State<Home> {
                                     RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(18.0)))),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SingleModeFrame()));
+                            },
                             child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -160,7 +174,12 @@ class _Home extends State<Home> {
                                     RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(18.0)))),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => RankModeFrame()));
+                            },
                             child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -228,7 +247,12 @@ class _Home extends State<Home> {
                                         borderRadius:
                                             BorderRadius.circular(18.0)))),
                             onPressed: () {
-                              setState(() {});
+                              setState(() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Guilde()));
+                              });
                             },
                             child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
