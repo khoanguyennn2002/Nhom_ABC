@@ -1,4 +1,5 @@
 import 'package:doanltdd/main.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignUpFrame extends StatefulWidget {
@@ -9,6 +10,47 @@ class SignUpFrame extends StatefulWidget {
 }
 
 class _SignUpFrame extends State<SignUpFrame> {
+  TextEditingController txtEmail = new TextEditingController();
+  TextEditingController txtPass = new TextEditingController();
+  TextEditingController txtPass1 = new TextEditingController();
+  Future signUp() async {
+   // showDialog(
+     //   context: context,
+       // barrierDismissible: false,
+        //builder: (context) {
+          //return Center(child: CircularProgressIndicator());
+        //});
+    try {
+      if (txtPass1.text == txtPass.text) {
+        final newUser = await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(
+                email: txtEmail.text, password: txtPass.text);
+        if (newUser != null) {
+         // Navigator.pop(context);
+          final snackBar = SnackBar(content: Text('Đăng kí thành công'));
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          Navigator.pop(context);
+        }
+      } else {
+        final snackBar = SnackBar(content: Text('Tài Khoản Này Không Hợp Lệ'));
+
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      }
+    } catch (e) {
+     // Navigator.pop(context);
+      final snackBar = SnackBar(content: Text('Có Lỗi Xảy Ra!'));
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
+  }
+
+  @override
+  void dispose() {
+    txtEmail.dispose();
+    txtPass.dispose();
+    txtPass1.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,6 +114,8 @@ class _SignUpFrame extends State<SignUpFrame> {
                               10,
                             ),
                             child: TextField(
+                              controller: txtEmail,
+                              keyboardType: TextInputType.emailAddress,
                               decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15),
@@ -107,6 +151,7 @@ class _SignUpFrame extends State<SignUpFrame> {
                               10,
                             ),
                             child: TextField(
+                              controller: txtPass,
                               obscureText: true,
                               decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
@@ -141,6 +186,7 @@ class _SignUpFrame extends State<SignUpFrame> {
                               10,
                             ),
                             child: TextField(
+                              controller: txtPass1,
                               obscureText: true,
                               decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
@@ -180,14 +226,7 @@ class _SignUpFrame extends State<SignUpFrame> {
                                                   BorderRadius.circular(
                                                       30.0)))),
                                   onPressed: () {
-                                    setState(() {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) => MyHomePage(
-                                                    title: '',
-                                                  )));
-                                    });
+                                    signUp();
                                   },
                                   child: Text(
                                     "Hoàn tất",

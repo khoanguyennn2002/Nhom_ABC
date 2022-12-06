@@ -4,10 +4,11 @@ import 'package:doanltdd/Screens/SignInFrame.dart';
 import 'package:doanltdd/main.dart';
 import 'package:doanltdd/screens/Footer.dart';
 import 'package:doanltdd/screens/Header.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sticky_headers/sticky_headers.dart';
-
 import 'Home.dart';
 
 class Setting extends StatefulWidget {
@@ -20,6 +21,7 @@ class Setting extends StatefulWidget {
 class _SettingState extends State<Setting> {
   double value = 0;
   double value1 = 0;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -57,7 +59,7 @@ class _SettingState extends State<Setting> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.volume_up),
+                          Icon(value == 0 ? Icons.volume_off : Icons.volume_up),
                           CupertinoSlider(
                             value: value,
                             min: 0,
@@ -74,7 +76,9 @@ class _SettingState extends State<Setting> {
                       Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.music_note),
+                            Icon(value1 == 0
+                                ? Icons.music_off
+                                : Icons.music_note),
                             CupertinoSlider(
                               value: value1,
                               min: 0,
@@ -87,10 +91,6 @@ class _SettingState extends State<Setting> {
                               },
                             ),
                           ]),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [],
-                      ),
                       Container(
                           //margin: EdgeInsets.only(bottom: 8),
                           alignment: AlignmentDirectional.center,
@@ -147,34 +147,7 @@ class _SettingState extends State<Setting> {
                             children: [
                               TextButton(
                                   onPressed: () {
-                                    showDialog(
-                                        context: context,
-                                        builder: (context) {
-                                          return AlertDialog(
-                                            title: Text("Đăng xuất"),
-                                            content: Text(
-                                                "Bạn có chắc là muốn thoát không ?"),
-                                            actions: [
-                                              TextButton(
-                                                  onPressed: () {
-                                                    Navigator.push(
-                                                        context,
-                                                        MaterialPageRoute(
-                                                            builder:
-                                                                (context) =>
-                                                                    MyHomePage(
-                                                                      title: "",
-                                                                    )));
-                                                  },
-                                                  child: Text("xác nhận")),
-                                              TextButton(
-                                                  onPressed: () {
-                                                    Navigator.pop(context);
-                                                  },
-                                                  child: Text("Hủy")),
-                                            ],
-                                          );
-                                        });
+                                    FirebaseAuth.instance.signOut();
                                   },
                                   child: Text(
                                     "Đăng xuất",

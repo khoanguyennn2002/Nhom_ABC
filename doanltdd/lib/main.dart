@@ -1,57 +1,47 @@
-import 'package:doanltdd/screens/Header.dart';
-import 'package:doanltdd/screens/Home.dart';
-import 'package:doanltdd/screens/Mission.dart';
-import 'package:doanltdd/screens/Setting.dart';
-import 'package:doanltdd/screens/SignUpFrame.dart';
-import 'package:flutter/material.dart';
-import 'screens/SignInFrame.dart';
+import 'package:doanltdd/Screens/Footer.dart';
+import 'package:doanltdd/Screens/Home.dart';
+import 'package:doanltdd/Screens/SignInFrame.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'package:flutter/material.dart';
+import 'Screens/SignInFrame.dart';
+
+Future<void> main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: MainPage());
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class MainPage extends StatelessWidget {
+  const MainPage({super.key});
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-            child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: (AssetImage("assets/background.jpg")),
-                        fit: BoxFit.cover)),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SignInFrame(),
-                  ],
-                ))));
+        body: StreamBuilder<User?>(
+            stream: FirebaseAuth.instance.authStateChanges(),
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                return SnackBar(content: Text('Có Lỗi Xảy Ra!'));
+              } else if (snapshot.hasData) {
+                return Footer();
+              } else {
+                return SignInFrame();
+              }
+            }));
   }
 }

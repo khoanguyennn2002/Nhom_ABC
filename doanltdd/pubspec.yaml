@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   sticky_headers: ^0.3.0+2
   flutter_rating_bar: ^4.0.1
+  firebase_auth: ^4.1.5
 
 
 dev_dependencies:
