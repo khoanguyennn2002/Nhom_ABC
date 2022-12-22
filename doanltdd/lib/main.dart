@@ -34,6 +34,23 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  final audioPlayer = AudioPlayer();
+
+  void playLocal() async {
+    await audioPlayer.play(AssetSource("audio/1.mp3"));
+  }
+
+  void loop() {
+    audioPlayer.setReleaseMode(ReleaseMode.loop);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    playLocal();
+    loop();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

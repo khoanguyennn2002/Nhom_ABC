@@ -15,24 +15,20 @@ class _SignInFrame extends State<SignInFrame> {
   TextEditingController txtEmail = new TextEditingController();
   TextEditingController txtPass = new TextEditingController();
   Future signIn() async {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return Center(child: CircularProgressIndicator());
+        });
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: txtEmail.text, password: txtPass.text);
+
+      Navigator.of(context).pop();
     } catch (e) {
-      showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-                title: Text("Thông báo"),
-                content: Text("Sai mật khẩu tài khoản"),
-                actions: [
-                  TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: Text("Hủy "))
-                ]);
-          });
+      Navigator.of(context).pop();
+      final snackBar = SnackBar(content: Text('Sai tài khoản hoặc mật khẩu'));
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
   }
 
