@@ -1,9 +1,9 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:doanltdd/Screens/Footer.dart';
 import 'package:doanltdd/Screens/Home.dart';
 import 'package:doanltdd/Screens/SignInFrame.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 import 'package:flutter/material.dart';
 import 'Screens/SignInFrame.dart';
 
@@ -26,18 +26,21 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: StreamBuilder<User?>(
             stream: FirebaseAuth.instance.authStateChanges(),
             builder: (context, snapshot) {
-              if (snapshot.hasError) {
-                return SnackBar(content: Text('Có Lỗi Xảy Ra!'));
-              } else if (snapshot.hasData) {
+              if (snapshot.hasData) {
                 return Footer();
               } else {
                 return SignInFrame();
