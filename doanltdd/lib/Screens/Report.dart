@@ -8,6 +8,7 @@ class Report extends StatefulWidget {
 }
 
 class _Report extends State<Report> {
+  TextEditingController txt_rp = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,8 +76,10 @@ class _Report extends State<Report> {
                     border: Border.all(color: Colors.black, width: 1),
                   ),
                   child: TextField(
+                    controller: txt_rp,
                     keyboardType: TextInputType.multiline,
                     maxLines: 20,
+                    maxLength: 500,
                     decoration: InputDecoration(
                       hintText: 'Mô tả sự cố:',
                     ),
@@ -109,7 +112,37 @@ class _Report extends State<Report> {
                                         borderRadius:
                                             BorderRadius.circular(35))),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                showDialog(
+                                context: context,
+                               builder: (context){
+                                return AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    
+                                  ),
+                                  title: Text('Gửi thành công',textAlign: TextAlign.center,),
+                                  content: Container(
+                                    height: 25,
+                                    
+                                    child: Column(
+                                      
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                             Text('phản hồi của bạn đã được gửi!')                                   
+                                      ]
+                                       
+                                    )
+                                  ),
+                                  actions: [TextButton(onPressed: (){
+                                    Navigator.pop(context);
+                                  txt_rp.clear();
+                                  
+                                  }, child: Text('Chấp nhận'))],
+                                );    
+                               },
+                               );
+                              },
                               child: Padding(
                                 padding: EdgeInsets.all(5),
                                 child: Text(

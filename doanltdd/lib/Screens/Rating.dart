@@ -9,6 +9,7 @@ class Rating extends StatefulWidget {
 }
 
 class _Rating extends State<Rating> {
+  TextEditingController txt_rt = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,8 +106,10 @@ class _Rating extends State<Rating> {
                     border: Border.all(color: Colors.black, width: 1),
                   ),
                   child: TextField(
+                    controller: txt_rt,
                     keyboardType: TextInputType.multiline,
                     maxLines: 20,
+                    maxLength: 500,
                     decoration: InputDecoration(
                       hintText: 'Bình luận:',
                     ),
@@ -126,7 +129,38 @@ class _Rating extends State<Rating> {
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(55))),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                                context: context,
+                               builder: (context){
+                                return AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    
+                                  ),
+                                  title: Text('Gửi thành công',textAlign: TextAlign.center,),
+                                  content: Container(
+                                    height: 25,
+                                    
+                                    child: Column(
+                                      
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                             Text('đánh giá của bạn đã được gửi!')                                   
+                                      ]
+                                       
+                                    )
+                                  ),
+                                  actions: [TextButton(onPressed: (){
+                                    Navigator.pop(context);
+                                    txt_rt.clear();
+                                  
+                                  
+                                  }, child: Text('Chấp nhận'))],
+                                );    
+                               },
+                               );
+                    },
                     child: Padding(
                       padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
                       child: Text(
