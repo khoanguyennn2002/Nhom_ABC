@@ -1,7 +1,7 @@
 import 'package:doanltdd/Screens/Shop.dart';
 import 'package:doanltdd/main.dart';
-import 'package:doanltdd/screens/Home.dart';
-import 'package:doanltdd/screens/Setting.dart';
+import 'package:doanltdd/Screens/Home.dart';
+import 'package:doanltdd/Screens/Setting.dart';
 import 'package:flutter/material.dart';
 
 class Footer extends StatefulWidget {
@@ -12,49 +12,45 @@ class Footer extends StatefulWidget {
 }
 
 class _Footer extends State<Footer> with TickerProviderStateMixin {
-  late TabController _tabController;
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(initialIndex: 1, length: 3, vsync: this);
-  }
+  int value = 1;
+  List lstscreen = [Shop(), Home(), Setting()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: BottomAppBar(
-            child: Container(
-                decoration: BoxDecoration(color: Colors.green),
-                height: MediaQuery.of(context).size.height / 10,
-                child: TabBar(
-                  controller: _tabController,
-                  tabs: [
-                    Icon(
-                      Icons.store,
+        bottomNavigationBar: SizedBox(
+          height: MediaQuery.of(context).size.height / 10,
+          child: BottomNavigationBar(
+              selectedItemColor: Colors.black87,
+              backgroundColor: Colors.green,
+              unselectedItemColor: Colors.black87,
+              currentIndex: value,
+              onTap: (int value1) {
+                setState(() {
+                  value = value1;
+                });
+              },
+              items: [
+                BottomNavigationBarItem(
+                    icon: Icon(
+                      Icons.shop,
                       size: 50,
-                      color: Colors.black87,
                     ),
-                    Icon(
+                    label: ''),
+                BottomNavigationBarItem(
+                    icon: Icon(
                       Icons.home,
                       size: 50,
-                      color: Colors.black87,
                     ),
-                    Icon(
+                    label: ''),
+                BottomNavigationBarItem(
+                    icon: Icon(
                       Icons.settings,
                       size: 50,
-                      color: Colors.black87,
-                    )
-                  ],
-                ))),
-        body: TabBarView(
-          controller: _tabController,
-          children: [
-            Center(child: Shop()),
-            Center(
-              child: Home(),
-            ),
-            Center(child: Setting())
-          ],
-        ));
+                    ),
+                    label: '')
+              ]),
+        ),
+        body: lstscreen[value]);
   }
 }

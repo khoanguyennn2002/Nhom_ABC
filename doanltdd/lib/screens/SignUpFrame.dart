@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doanltdd/main.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class SignUpFrame extends StatefulWidget {
@@ -9,6 +12,71 @@ class SignUpFrame extends StatefulWidget {
 }
 
 class _SignUpFrame extends State<SignUpFrame> {
+  TextEditingController txtEmail = new TextEditingController();
+  TextEditingController txtPass = new TextEditingController();
+  TextEditingController txtPass1 = new TextEditingController();
+  TextEditingController txtUsername = new TextEditingController();
+
+  Future signUp() async {
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) {
+          return Center(child: CircularProgressIndicator());
+        });
+
+    if (txtPass1.text == txtPass.text) {
+      try {
+        final newUser = await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(
+                email: txtEmail.text, password: txtPass.text)
+            .then((value) {
+          final user = User(
+              username: txtUsername.text,
+              email: txtEmail.text,
+              lv: 1,
+              rank: "Đồng I");
+          addUserDetails(user, value.user!.uid);
+        });
+        Navigator.of(context).pop();
+
+        final snackBar = SnackBar(content: Text('Đăng kí thành công'));
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        txtUsername.clear();
+        txtEmail.clear();
+        txtPass.clear();
+        txtPass1.clear();
+      } catch (e) {
+        Navigator.pop(context);
+        final snackBar = SnackBar(content: Text('Tài khoản đã tồn tại'));
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      }
+    } else {
+      Navigator.of(context).pop();
+      final snackBar = SnackBar(content: Text('Mật khẩu không trùng'));
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
+
+    // FirebaseAuth.instance.signOut();
+    //Navigator.pop(context);
+  }
+
+  Future addUserDetails(User user, uid) async {
+    final docUser = FirebaseFirestore.instance.collection('users').doc(uid);
+    final json = user.toJson();
+    await docUser.set(json);
+  }
+
+  @override
+  void dispose() {
+    txtEmail.dispose();
+    txtPass.dispose();
+    txtPass1.dispose();
+    txtUsername.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,29 +117,26 @@ class _SignUpFrame extends State<SignUpFrame> {
                           border: Border.all(width: 1, color: Colors.black),
                           borderRadius: BorderRadius.circular(15)),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.fromLTRB(
-                                  15,
-                                  10,
-                                  15,
-                                  10,
-                                ),
-                                child: Text("Tên đăng nhập:"),
-                              )
-                            ],
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(
+                              15,
+                              10,
+                              15,
+                              0,
+                            ),
+                            child: Text("Username:"),
                           ),
                           Padding(
                             padding: EdgeInsets.fromLTRB(
                               15,
                               0,
                               15,
-                              10,
+                              0,
                             ),
-                            child: TextField(
+                            child: TextFormField(
+                              controller: txtUsername,
                               decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15),
@@ -79,25 +144,18 @@ class _SignUpFrame extends State<SignUpFrame> {
                                         width: 1, color: Colors.black),
                                   ),
                                   border: OutlineInputBorder(),
-                                  hintText: "Tên đăng nhập",
+                                  hintText: "Username",
                                   hintStyle: TextStyle(color: Colors.black)),
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.fromLTRB(
-                                  15,
-                                  0,
-                                  15,
-                                  0,
-                                ),
-                                child: Text(
-                                  "Mật khẩu:",
-                                ),
-                              )
-                            ],
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(
+                              15,
+                              10,
+                              15,
+                              0,
+                            ),
+                            child: Text("Email:"),
                           ),
                           Padding(
                             padding: EdgeInsets.fromLTRB(
@@ -107,6 +165,39 @@ class _SignUpFrame extends State<SignUpFrame> {
                               10,
                             ),
                             child: TextField(
+                              controller: txtEmail,
+                              keyboardType: TextInputType.emailAddress,
+                              decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        width: 1, color: Colors.black),
+                                  ),
+                                  border: OutlineInputBorder(),
+                                  hintText: "Email",
+                                  hintStyle: TextStyle(color: Colors.black)),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(
+                              15,
+                              0,
+                              15,
+                              0,
+                            ),
+                            child: Text(
+                              "Mật khẩu:",
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(
+                              15,
+                              0,
+                              15,
+                              10,
+                            ),
+                            child: TextField(
+                              controller: txtPass,
                               obscureText: true,
                               decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
@@ -119,19 +210,14 @@ class _SignUpFrame extends State<SignUpFrame> {
                                   hintStyle: TextStyle(color: Colors.black)),
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.fromLTRB(
-                                  15,
-                                  0,
-                                  15,
-                                  0,
-                                ),
-                                child: Text("Xác nhận mật khẩu:"),
-                              )
-                            ],
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(
+                              15,
+                              0,
+                              15,
+                              0,
+                            ),
+                            child: Text("Xác nhận mật khẩu:"),
                           ),
                           Padding(
                             padding: EdgeInsets.fromLTRB(
@@ -141,6 +227,7 @@ class _SignUpFrame extends State<SignUpFrame> {
                               10,
                             ),
                             child: TextField(
+                              controller: txtPass1,
                               obscureText: true,
                               decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
@@ -159,7 +246,10 @@ class _SignUpFrame extends State<SignUpFrame> {
                               Padding(
                                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                                 child: TextButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      FirebaseAuth.instance.signOut();
+                                      Navigator.of(context).pop();
+                                    },
                                     child: Text("Thoát",
                                         style: TextStyle(
                                             decoration:
@@ -180,14 +270,27 @@ class _SignUpFrame extends State<SignUpFrame> {
                                                   BorderRadius.circular(
                                                       30.0)))),
                                   onPressed: () {
-                                    setState(() {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) => MyHomePage(
-                                                    title: '',
-                                                  )));
-                                    });
+                                    if (txtUsername.text.isEmpty) {
+                                      final snackBar = SnackBar(
+                                          content: Text(
+                                              'vui lòng điền đầy đủ thông tin'));
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(snackBar);
+                                    } else if (txtEmail.text.isEmpty) {
+                                      final snackBar = SnackBar(
+                                          content: Text(
+                                              'Vui lòng điền đầy đủ thông tin'));
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(snackBar);
+                                    } else if (txtPass.text.length < 6) {
+                                      final snackBar = SnackBar(
+                                          content: Text(
+                                              'Mật khẩu phải có ít nhất 6 kí tự'));
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(snackBar);
+                                    } else {
+                                      signUp();
+                                    }
                                   },
                                   child: Text(
                                     "Hoàn tất",
@@ -203,4 +306,27 @@ class _SignUpFrame extends State<SignUpFrame> {
                   ],
                 ))));
   }
+}
+
+class User {
+  final String username;
+  final String email;
+  final String rank;
+  final int lv;
+  User(
+      {required this.username,
+      required this.email,
+      required this.rank,
+      required this.lv});
+  Map<String, dynamic> toJson() => {
+        'username': username,
+        'email': email,
+        'rank': rank,
+        'lv': lv,
+      };
+  static User fromJson(Map<String, dynamic> json) => User(
+      username: json['username'],
+      email: json['email'],
+      lv: json['lv'],
+      rank: json['rank']);
 }

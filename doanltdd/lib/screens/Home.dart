@@ -42,7 +42,7 @@ class _Home extends State<Home> {
                               shape: MaterialStateProperty.all<
                                       RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(50))),
+                                      borderRadius: BorderRadius.circular(30))),
                               backgroundColor:
                                   MaterialStateProperty.all(Colors.white),
                             ),
@@ -68,7 +68,7 @@ class _Home extends State<Home> {
                               shape: MaterialStateProperty.all<
                                       RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(50))),
+                                      borderRadius: BorderRadius.circular(30))),
                               backgroundColor:
                                   MaterialStateProperty.all(Colors.white),
                             ),
@@ -101,7 +101,7 @@ class _Home extends State<Home> {
                                         RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
                                         borderRadius:
-                                            BorderRadius.circular(18.0)))),
+                                            BorderRadius.circular(15)))),
                             onPressed: () {
                               Navigator.push(
                                   context,
@@ -122,7 +122,7 @@ class _Home extends State<Home> {
                                           decoration: BoxDecoration(
                                               color: Colors.white,
                                               borderRadius:
-                                                  BorderRadius.circular(20)),
+                                                  BorderRadius.circular(15)),
                                           child: Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
@@ -148,7 +148,7 @@ class _Home extends State<Home> {
                             padding: EdgeInsets.all(8),
                             decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.circular(20)),
+                                borderRadius: BorderRadius.circular(15)),
                             child: Text(
                               "Chế độ đơn",
                               style: TextStyle(
@@ -173,7 +173,7 @@ class _Home extends State<Home> {
                                         RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
                                         borderRadius:
-                                            BorderRadius.circular(18.0)))),
+                                            BorderRadius.circular(15)))),
                             onPressed: () {
                               Navigator.push(
                                   context,
@@ -194,7 +194,7 @@ class _Home extends State<Home> {
                                           decoration: BoxDecoration(
                                               color: Colors.white,
                                               borderRadius:
-                                                  BorderRadius.circular(20)),
+                                                  BorderRadius.circular(15)),
                                           child: Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
@@ -220,7 +220,7 @@ class _Home extends State<Home> {
                             padding: EdgeInsets.all(8),
                             decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.circular(20)),
+                                borderRadius: BorderRadius.circular(15)),
                             child: Text(
                               "Chế độ xếp hạng",
                               style: TextStyle(
@@ -245,7 +245,7 @@ class _Home extends State<Home> {
                                         RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
                                         borderRadius:
-                                            BorderRadius.circular(18.0)))),
+                                            BorderRadius.circular(15)))),
                             onPressed: () {
                               setState(() {
                                 Navigator.push(
@@ -274,7 +274,7 @@ class _Home extends State<Home> {
                             padding: EdgeInsets.all(8),
                             decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.circular(20)),
+                                borderRadius: BorderRadius.circular(15)),
                             child: Text(
                               "Hướng dẫn",
                               style: TextStyle(
