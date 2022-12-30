@@ -14,11 +14,19 @@ class Profile extends StatefulWidget {
 }
 
 class _Profile extends State<Profile> {
+  TextEditingController txtChange = new TextEditingController();
   String? uid1 = FirebaseAuth.instance.currentUser?.uid;
+  @override
+  void dispose() {
+    txtChange.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
+        body: SingleChildScrollView(
+            child: Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       decoration: const BoxDecoration(
@@ -44,7 +52,7 @@ class _Profile extends State<Profile> {
           Container(
             margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
             //width: MediaQuery.of(context).size.width / 1.5,
-            height: MediaQuery.of(context).size.height / 1.5,
+            //height: MediaQuery.of(context).size.height / 1.5,
             // margin: EdgeInsets.all(5),
             // padding: EdgeInsets.all(5),
             decoration: BoxDecoration(
@@ -136,7 +144,88 @@ class _Profile extends State<Profile> {
                                             ? Center(
                                                 child: Text('lỗi'),
                                               )
-                                            : buildUser(user, uid1);
+                                            : Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  buildUser(user, uid1),
+                                                  IconButton(
+                                                    onPressed: () {
+                                                      showDialog(
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return AlertDialog(
+                                                            shape:
+                                                                RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20),
+                                                            ),
+                                                            title: Text(
+                                                              'Đổi tên',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                            ),
+                                                            content: Container(
+                                                                height: 100,
+                                                                child: Column(
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceEvenly,
+                                                                  children: [
+                                                                    TextField(
+                                                                      controller:
+                                                                          txtChange,
+                                                                      keyboardType:
+                                                                          TextInputType
+                                                                              .multiline,
+                                                                      decoration:
+                                                                          InputDecoration(
+                                                                        hintText:
+                                                                            'Tên mới:',
+                                                                      ),
+                                                                    ),
+                                                                    Row(
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .spaceEvenly,
+                                                                      children: [
+                                                                        ElevatedButton(
+                                                                            onPressed:
+                                                                                () {
+                                                                              final docUser = FirebaseFirestore.instance.collection('users').doc(uid1);
+
+                                                                              docUser.update({
+                                                                                'username': txtChange.text.trim(),
+                                                                              });
+                                                                              Navigator.pop(context);
+                                                                            },
+                                                                            child:
+                                                                                Text('Lưu')),
+                                                                      ],
+                                                                    ),
+                                                                  ],
+                                                                )),
+                                                            actions: [
+                                                              TextButton(
+                                                                  onPressed:
+                                                                      () {
+                                                                    Navigator.pop(
+                                                                        context);
+                                                                  },
+                                                                  child: Text(
+                                                                      'Hủy'))
+                                                            ],
+                                                          );
+                                                        },
+                                                      );
+                                                    },
+                                                    icon: Icon(Icons.edit),
+                                                  ),
+                                                ],
+                                              );
                                       } else {
                                         return Center(
                                           child: CircularProgressIndicator(),
@@ -419,7 +508,9 @@ class _Profile extends State<Profile> {
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25))),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         child: Column(
                           children: [
                             Padding(
@@ -466,7 +557,7 @@ class _Profile extends State<Profile> {
           ),
         ],
       ),
-    ));
+    )));
   }
 }
 
