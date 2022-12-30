@@ -38,7 +38,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   sticky_headers: ^0.3.0+2
   flutter_rating_bar: ^4.0.1
-  
 
 
 dev_dependencies:
@@ -74,7 +73,6 @@ flutter:
    - assets/quest.png
    - assets/school-bag.png
    - assets/avata.jpg
-   - assets/MT.png
    
 
 
