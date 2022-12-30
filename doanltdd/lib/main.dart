@@ -1,3 +1,4 @@
+import 'package:doanltdd/Screens/Guilde.dart';
 import 'package:doanltdd/screens/Header.dart';
 import 'package:doanltdd/screens/Home.dart';
 import 'package:doanltdd/screens/Mission.dart';
@@ -50,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SignInFrame(),
+                    Guilde(),
                   ],
                 ))));
   }

@@ -1,3 +1,4 @@
+import 'package:doanltdd/Screens/Home.dart';
 import 'package:flutter/material.dart'; 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/foundation.dart';
@@ -30,7 +31,10 @@ class _Guilde extends State<Guilde> {
                         margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
                         child: TextButton(
                             onPressed: () {
-                              Navigator.pop(context);
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Home()));
                             },
                             child: Icon(
                               Icons.close,
