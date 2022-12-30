@@ -19,8 +19,8 @@ class Setting extends StatefulWidget {
 }
 
 class _SettingState extends State<Setting> {
-  double value = 0;
-  double value1 = 0;
+  bool music = true;
+  bool volumn = true;
 
   @override
   Widget build(BuildContext context) {
@@ -54,42 +54,34 @@ class _SettingState extends State<Setting> {
                     border: Border.all(width: 1, color: Colors.black),
                     borderRadius: BorderRadius.circular(20)),
                 child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(value == 0 ? Icons.volume_off : Icons.volume_up),
-                          CupertinoSlider(
-                            value: value,
-                            min: 0,
-                            max: 100,
-                            activeColor: Colors.green,
-                            onChanged: (newValue) {
-                              setState(() {
-                                value = newValue;
-                              });
-                            },
-                          )
-                        ],
-                      ),
-                      Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(value1 == 0
-                                ? Icons.music_off
-                                : Icons.music_note),
-                            CupertinoSlider(
-                              value: value1,
-                              min: 0,
-                              max: 100,
-                              activeColor: Colors.green,
-                              onChanged: (newValue) {
+                            IconButton(
+                              onPressed: () {
                                 setState(() {
-                                  value1 = newValue;
+                                  volumn = !volumn;
                                 });
                               },
+                              icon: Icon((volumn == true)
+                                  ? Icons.volume_up
+                                  : Icons.volume_mute),
+                              iconSize: 40,
                             ),
+                            IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  music = !music;
+                                });
+                              },
+                              icon: Icon((music == true)
+                                  ? Icons.music_note
+                                  : Icons.music_off),
+                              iconSize: 40,
+                            )
                           ]),
                       Container(
                           //margin: EdgeInsets.only(bottom: 8),
@@ -147,7 +139,17 @@ class _SettingState extends State<Setting> {
                             children: [
                               TextButton(
                                   onPressed: () {
+                                    showDialog(
+                                        context: context,
+                                        barrierDismissible: false,
+                                        builder: (context) {
+                                          return Center(
+                                              child:
+                                                  CircularProgressIndicator());
+                                        });
+
                                     FirebaseAuth.instance.signOut();
+                                    Navigator.of(context).pop();
                                   },
                                   child: Text(
                                     "Đăng xuất",
