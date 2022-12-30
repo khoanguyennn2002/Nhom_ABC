@@ -4,6 +4,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
+import '../model/user_object.dart';
+import '../provider/user_provider.dart';
+
 class SignUpFrame extends StatefulWidget {
   SignUpFrame({super.key});
 
@@ -31,7 +34,7 @@ class _SignUpFrame extends State<SignUpFrame> {
             .createUserWithEmailAndPassword(
                 email: txtEmail.text, password: txtPass.text)
             .then((value) {
-          final user = User(
+          final user = UserObject(
               username: txtUsername.text,
               email: txtEmail.text,
               lv: 1,
@@ -59,12 +62,6 @@ class _SignUpFrame extends State<SignUpFrame> {
 
     // FirebaseAuth.instance.signOut();
     //Navigator.pop(context);
-  }
-
-  Future addUserDetails(User user, uid) async {
-    final docUser = FirebaseFirestore.instance.collection('users').doc(uid);
-    final json = user.toJson();
-    await docUser.set(json);
   }
 
   @override
@@ -306,27 +303,4 @@ class _SignUpFrame extends State<SignUpFrame> {
                   ],
                 ))));
   }
-}
-
-class User {
-  final String username;
-  final String email;
-  final String rank;
-  final int lv;
-  User(
-      {required this.username,
-      required this.email,
-      required this.rank,
-      required this.lv});
-  Map<String, dynamic> toJson() => {
-        'username': username,
-        'email': email,
-        'rank': rank,
-        'lv': lv,
-      };
-  static User fromJson(Map<String, dynamic> json) => User(
-      username: json['username'],
-      email: json['email'],
-      lv: json['lv'],
-      rank: json['rank']);
 }
