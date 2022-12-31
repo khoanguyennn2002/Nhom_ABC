@@ -158,7 +158,35 @@ class _Shop extends State<Shop> {
                                                         BorderRadius.circular(
                                                             25))),
                                           ),
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            showDialog(
+                                context: context,
+                               builder: (context){
+                                return AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    
+                                  ),
+                                  title: Text('Mua thành công',textAlign: TextAlign.center,),
+                                  content: Container(
+                                    height: 25,
+                                    
+                                    child: Column(
+                                      
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                             Text('Bạn đã mua vật phẩm thành công')                                   
+                                      ]
+                                       
+                                    )
+                                  ),
+                                  actions: [TextButton(onPressed: (){    
+                                    Navigator.pop(context);                             
+                                  }, child: Text('Hoàn thành'))],
+                                );    
+                               },
+                               );
+                                          },
                                           child: Container(
                                             margin: EdgeInsets.all(2),
                                             padding: EdgeInsets.all(1),
@@ -323,7 +351,35 @@ class _Shop extends State<Shop> {
                                                         BorderRadius.circular(
                                                             25))),
                                           ),
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            showDialog(
+                                context: context,
+                               builder: (context){
+                                return AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    
+                                  ),
+                                  title: Text('Mua thất bại',textAlign: TextAlign.center,),
+                                  content: Container(
+                                    height: 25,
+                                    
+                                    child: Column(
+                                      
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                             Text('Bạn không đủ xu!')                                   
+                                      ]
+                                       
+                                    )
+                                  ),
+                                  actions: [TextButton(onPressed: (){
+                                    Navigator.pop(context);
+                                  }, child: Text('Thoát'))],
+                                );    
+                               },
+                               );
+                                          },
                                           child: Container(
                                             margin: EdgeInsets.all(2),
                                             padding: EdgeInsets.all(1),
@@ -479,7 +535,35 @@ class _Shop extends State<Shop> {
                                               borderRadius:
                                                   BorderRadius.circular(15))),
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      showDialog(
+                                context: context,
+                               builder: (context){
+                                return AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    
+                                  ),
+                                  title: Text('Mua thành công',textAlign: TextAlign.center,),
+                                  content: Container(
+                                    height: 25,
+                                    
+                                    child: Column(
+                                      
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                             Text('Bạn đã mua vật phẩm thành công')                                   
+                                      ]
+                                       
+                                    )
+                                  ),
+                                  actions: [TextButton(onPressed: (){    
+                                    Navigator.pop(context);                             
+                                  }, child: Text('Hoàn thành'))],
+                                );    
+                               },
+                               );
+                                    },
                                     child: Container(
                                       margin: EdgeInsets.all(2),
                                       padding: EdgeInsets.all(1),
@@ -528,7 +612,35 @@ class _Shop extends State<Shop> {
                                               borderRadius:
                                                   BorderRadius.circular(15))),
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      showDialog(
+                                context: context,
+                               builder: (context){
+                                return AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    
+                                  ),
+                                  title: Text('Mua thất bại',textAlign: TextAlign.center,),
+                                  content: Container(
+                                    height: 25,
+                                    
+                                    child: Column(
+                                      
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                             Text('Bạn không đủ xu!')                                   
+                                      ]
+                                       
+                                    )
+                                  ),
+                                  actions: [TextButton(onPressed: (){
+                                    Navigator.pop(context);
+                                  }, child: Text('Thoát'))],
+                                );    
+                               },
+                               );
+                                    },
                                     child: Container(
                                       margin: EdgeInsets.all(2),
                                       padding: EdgeInsets.all(1),
@@ -663,7 +775,36 @@ class _Shop extends State<Shop> {
                                               borderRadius:
                                                   BorderRadius.circular(15))),
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      showDialog(
+                                context: context,
+                               builder: (context){
+                                return AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    
+                                  ),
+                                  title: Text('Mua thất bại',textAlign: TextAlign.center,),
+                                  content: Container(
+                                    height: 25,
+                                    
+                                    child: Column(
+                                      
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                             Text('Bạn không đủ xu!')                                   
+                                      ]
+                                       
+                                    )
+                                  ),
+                                  actions: [TextButton(onPressed: (){
+                                    Navigator.pop(context);
+                                  }, child: Text('Thoát'))],
+                                );    
+                               },
+                               );
+
+                                    },
                                     child: Container(
                                       margin: EdgeInsets.all(2),
                                       padding: EdgeInsets.all(1),
@@ -711,7 +852,35 @@ class _Shop extends State<Shop> {
                                               borderRadius:
                                                   BorderRadius.circular(15))),
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      showDialog(
+                                context: context,
+                               builder: (context){
+                                return AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    
+                                  ),
+                                  title: Text('Mua thất bại',textAlign: TextAlign.center,),
+                                  content: Container(
+                                    height: 25,
+                                    
+                                    child: Column(
+                                      
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                             Text('Bạn không đủ xu!')                                   
+                                      ]
+                                       
+                                    )
+                                  ),
+                                  actions: [TextButton(onPressed: (){
+                                    Navigator.pop(context);
+                                  }, child: Text('Thoát'))],
+                                );    
+                               },
+                               );
+                                    },
                                     child: Container(
                                       margin: EdgeInsets.all(2),
                                       padding: EdgeInsets.all(1),
@@ -846,7 +1015,35 @@ class _Shop extends State<Shop> {
                                               borderRadius:
                                                   BorderRadius.circular(15))),
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      showDialog(
+                                context: context,
+                               builder: (context){
+                                return AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    
+                                  ),
+                                  title: Text('Mua thất bại',textAlign: TextAlign.center,),
+                                  content: Container(
+                                    height: 25,
+                                    
+                                    child: Column(
+                                      
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                             Text('Bạn không đủ xu!')                                   
+                                      ]
+                                       
+                                    )
+                                  ),
+                                  actions: [TextButton(onPressed: (){
+                                    Navigator.pop(context);
+                                  }, child: Text('Thoát'))],
+                                );    
+                               },
+                               );
+                                    },
                                     child: Container(
                                       margin: EdgeInsets.all(2),
                                       padding: EdgeInsets.all(1),
@@ -892,7 +1089,35 @@ class _Shop extends State<Shop> {
                                               borderRadius:
                                                   BorderRadius.circular(15))),
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      showDialog(
+                                context: context,
+                               builder: (context){
+                                return AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    
+                                  ),
+                                  title: Text('Mua thất bại',textAlign: TextAlign.center,),
+                                  content: Container(
+                                    height: 25,
+                                    
+                                    child: Column(
+                                      
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                             Text('Bạn không đủ xu!')                                   
+                                      ]
+                                       
+                                    )
+                                  ),
+                                  actions: [TextButton(onPressed: (){
+                                    Navigator.pop(context);
+                                  }, child: Text('Thoát'))],
+                                );    
+                               },
+                               );
+                                    },
                                     child: Container(
                                       margin: EdgeInsets.all(2),
                                       padding: EdgeInsets.all(1),

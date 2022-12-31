@@ -10,6 +10,9 @@ class Bag extends StatefulWidget {
 }
 
 class _Bag extends State<Bag> {
+  var vp1 = 0;
+var vp2 = 0;
+var vp3 = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -130,7 +133,7 @@ class _Bag extends State<Bag> {
                                         child: Column(
                                           children: [
                                             Text(
-                                              '129',
+                                              '$vp1',
                                               style: TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 15,
@@ -196,7 +199,7 @@ class _Bag extends State<Bag> {
                                         child: Column(
                                           children: [
                                             Text(
-                                              '129',
+                                              '$vp2',
                                               style: TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 15,
@@ -262,7 +265,7 @@ class _Bag extends State<Bag> {
                                         child: Column(
                                           children: [
                                             Text(
-                                              '129',
+                                              '$vp3',
                                               style: TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 15,
