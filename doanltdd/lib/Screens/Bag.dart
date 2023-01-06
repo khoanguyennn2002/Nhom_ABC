@@ -11,8 +11,8 @@ class Bag extends StatefulWidget {
 
 class _Bag extends State<Bag> {
   var vp1 = 0;
-var vp2 = 0;
-var vp3 = 0;
+  var vp2 = 0;
+  var vp3 = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

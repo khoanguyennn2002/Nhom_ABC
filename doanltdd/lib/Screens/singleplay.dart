@@ -4,6 +4,7 @@ import 'package:doanltdd/Screens/Header.dart';
 import 'package:doanltdd/Screens/Home.dart';
 import 'package:doanltdd/Screens/singlemode.dart';
 import 'package:flutter/material.dart';
+import 'Footer.dart';
 import 'modelQuestion.dart';
 
 class SinglePlayFrame extends StatefulWidget {
@@ -154,7 +155,7 @@ class _SinglePlayFrame extends State<SinglePlayFrame> {
                                                                     MaterialPageRoute(
                                                                         builder:
                                                                             (context) =>
-                                                                                Home()));
+                                                                                Footer()));
                                                               },
                                                               child: Text(
                                                                   "Bỏ cuộc")),

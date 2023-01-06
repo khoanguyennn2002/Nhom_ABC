@@ -39,6 +39,7 @@ dependencies:
   sticky_headers: ^0.3.0+2
   flutter_rating_bar: ^4.0.1
   cached_network_image: ^3.2.2
+  carousel_slider: ^4.2.1
   http: ^0.13.5
   firebase_auth: ^4.1.2
   cloud_firestore: ^4.0.5
